@@ -2,10 +2,10 @@ import React from "react";
 import { Platform, StyleSheet } from "react-native";
 import { SearchBar } from "react-native-elements";
 
-interface ListSearchBarProps {
+type ListSearchBarProps = {
   searchQuery: string;
   setSearchQuery(query: string): any;
-}
+};
 
 export default function ListSearchBar({
   searchQuery,

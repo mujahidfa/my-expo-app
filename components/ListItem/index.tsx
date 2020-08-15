@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-interface ItemProps {
+type ItemProps = {
   name: {
     firstName: string;
     lastName: string;
   };
-}
+};
 
 export default function ListItem({ name }: ItemProps) {
   return (

@@ -1,0 +1,35 @@
+{
+  "status": "ok",
+  "total": 3,
+  "results": [
+    {
+      "id": 1,
+      "name": {
+        "first": "Mujahid",
+        "last": "Anuar"
+      },
+      "email": "mujahid@test.com",
+      "phone": "01156285542",
+      "bank": [
+        {
+          "id": 1,
+          "name": "Maybank",
+          "account": "12897345439937"
+        },
+        {
+          "id": 2,
+          "name": "CIMB",
+          "account": "12897345439937"
+        }
+      ],
+      "ewallet": {
+        "grabpay": "sds",
+        "tng": "sdsd",
+        "boost": "sdss"
+      },
+      "paypal": {
+        "name": "paypal.me/mujahidfa"
+      }
+    }
+  ]
+}

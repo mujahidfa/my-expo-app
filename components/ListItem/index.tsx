@@ -8,13 +8,15 @@ interface ItemProps {
   };
 }
 
-const ListItem = ({ name }: ItemProps) => (
-  <View style={styles.item}>
-    <Text style={[styles.name, styles.firstName]}>{name.firstName}</Text>
-    <Text> </Text>
-    <Text style={styles.name}>{name.lastName}</Text>
-  </View>
-);
+export default function ListItem({ name }: ItemProps) {
+  return (
+    <View style={styles.item}>
+      <Text style={[styles.name, styles.firstName]}>{name.firstName}</Text>
+      <Text> </Text>
+      <Text style={styles.name}>{name.lastName}</Text>
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   item: {
@@ -29,5 +31,3 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-
-export default ListItem;

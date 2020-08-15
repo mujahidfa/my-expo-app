@@ -7,7 +7,10 @@ interface ListSearchBarProps {
   setSearchQuery(query: string): any;
 }
 
-const ListSearchBar = ({ searchQuery, setSearchQuery }: ListSearchBarProps) => {
+export default function ListSearchBar({
+  searchQuery,
+  setSearchQuery,
+}: ListSearchBarProps) {
   return (
     <SearchBar
       placeholder="Search"
@@ -40,7 +43,7 @@ const ListSearchBar = ({ searchQuery, setSearchQuery }: ListSearchBarProps) => {
       value={searchQuery}
     />
   );
-};
+}
 
 const styles = StyleSheet.create({
   textContainer: {
@@ -56,5 +59,3 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
-
-export default ListSearchBar;

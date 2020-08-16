@@ -1,4 +1,5 @@
 import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
+import { useTheme } from "@react-navigation/native";
 import Constants from "expo-constants";
 import React, { useState, useEffect } from "react";
 import { View, FlatList, StyleSheet } from "react-native";
@@ -30,6 +31,8 @@ type NameList = {
 }[];
 
 export default function ContactsScreen({ route, navigation }: Props) {
+  const { colors } = useTheme();
+
   const [searchQuery, setSearchQuery] = useState("");
   const [nameList, setNameList] = useState<NameList>(DATA);
 
@@ -46,8 +49,10 @@ export default function ContactsScreen({ route, navigation }: Props) {
   }, [searchQuery]);
 
   return (
-    <View style={styles.container}>
-      <Text h1>Contacts</Text>
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <Text h3 style={[{ color: colors.text, fontWeight: "700" }]}>
+        Contacts
+      </Text>
       <FlatList
         data={nameList}
         renderItem={({ item }: FlatListRenderItemProps) => (
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#1a202c",
+    // backgroundColor: "#1a202c",
     paddingHorizontal: 20,
   },
 });

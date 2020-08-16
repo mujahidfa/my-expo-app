@@ -1,3 +1,4 @@
+import { useTheme } from "@react-navigation/native";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
@@ -9,11 +10,15 @@ type ItemProps = {
 };
 
 export default function ListItem({ name }: ItemProps) {
+  const { colors } = useTheme();
+
   return (
     <View style={styles.item}>
-      <Text style={[styles.name, styles.firstName]}>{name.firstName}</Text>
+      <Text style={[styles.name, styles.firstName, { color: colors.text }]}>
+        {name.firstName}
+      </Text>
       <Text> </Text>
-      <Text style={styles.name}>{name.lastName}</Text>
+      <Text style={[styles.name, { color: colors.text }]}>{name.lastName}</Text>
     </View>
   );
 }
@@ -25,7 +30,6 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 18,
-    color: "white",
   },
   firstName: {
     fontWeight: "bold",
